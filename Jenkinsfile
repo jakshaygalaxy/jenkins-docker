@@ -1,4 +1,7 @@
-pipeline {
+pipeline
+node("jenkins-slave") {
+    timeout(unit: 'SECONDS', time: 5)
+       {
     agent any
     stages {
         stage('Build') {
@@ -14,4 +17,5 @@ pipeline {
             }
         }
     }
-}
+  }
+}    
