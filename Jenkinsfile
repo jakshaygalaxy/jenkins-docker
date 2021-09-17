@@ -4,7 +4,7 @@ pipeline {
     }
     stages {
         stage('Test') {
-        docker { image 'node:14-alpine' }
+        agent { docker image 'maven:3.8.1-adoptopenjdk-11' }
             steps {
             echo 'Hello, Maven'
             sh 'mvn --version'
